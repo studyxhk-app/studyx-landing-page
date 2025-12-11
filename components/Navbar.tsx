@@ -37,7 +37,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick, onResourcesClic
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <span className="text-2xl font-extrabold text-gray-900 tracking-tight">StudyX</span>
+            {/* 
+              Logo Image
+              To use your own logo file:
+              1. Add your logo file (e.g., logo.png) to the public folder.
+              2. Change src to "/logo.png"
+            */}
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'%3E%3Ctext x='0' y='32' font-family='Inter, sans-serif' font-weight='800' font-size='32' fill='%23111827'%3EStudyX%3C/text%3E%3C/svg%3E" 
+              alt="StudyX" 
+              className="h-8 w-auto" 
+            />
           </div>
           
           <div className="hidden md:flex items-center space-x-8">

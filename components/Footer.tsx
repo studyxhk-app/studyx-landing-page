@@ -13,7 +13,15 @@ export const Footer: React.FC<FooterProps> = ({ onDownloadClick, onFeaturesClick
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-               <span className="text-2xl font-extrabold text-gray-900 tracking-tight">StudyX</span>
+               {/* 
+                 Logo Image
+                 To use your own logo file, replace src with "/logo.png"
+               */}
+               <img 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'%3E%3Ctext x='0' y='32' font-family='Inter, sans-serif' font-weight='800' font-size='32' fill='%23111827'%3EStudyX%3C/text%3E%3C/svg%3E" 
+                 alt="StudyX" 
+                 className="h-8 w-auto" 
+               />
             </div>
             <p className="text-slate-600 max-w-sm">
               Empowering Hong Kong students to achieve their academic dreams through technology and community.
