@@ -4,45 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StudyX - Your HKDSE Companion - studyxhk.com</title>
-
-    <link rel="icon" type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='80' font-weight='900' fill='black' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
-
+    
+    <!-- Favicon: Updated to branded 'S' in black to match the logo text. 
+         To use your own file, replace the href below with your file path, e.g., '/logo.png' -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='80' font-weight='900' fill='black' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: '#2563EB',
-              secondary: '#1E40AF',
-              accent: '#F59E0B',
-              background: '#F8FAFC',
+              primary: '#2563EB', // blue-600
+              secondary: '#1E40AF', // blue-800
+              accent: '#F59E0B', // amber-500
+              background: '#F8FAFC', // slate-50
             },
-            fontFamily: { sans: ['Inter', 'sans-serif'] }
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
           }
         }
       }
     </script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      html { scroll-behavior: smooth; }
-      body { font-family: 'Inter', sans-serif; }
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Hide scrollbar for clean mockups */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
-  </head>
-
-  <body class="bg-background text-slate-900">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+</head>
+  <body>
     <div id="root"></div>
-
-    <!-- 🔥 REQUIRED FOR REACT TO WORK -->
-    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

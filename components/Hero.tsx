@@ -4,7 +4,7 @@ import { PhoneFrame } from './ui/PhoneFrame';
 import { QuizScreen } from './screens/QuizScreen';
 import { SubjectsScreen } from './screens/SubjectsScreen';
 import { ProfileScreen } from './screens/ProfileScreen';
-import { Download, Star, Zap } from 'lucide-react';
+import { Download, Star, Zap, Rocket } from 'lucide-react';
 
 interface HeroProps {
   onDownloadClick: () => void;
@@ -33,16 +33,27 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick }) => {
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               The exam-oriented companion for Hong Kong students. Master your subjects with gamified quizzes, community support, and detailed analytics.
             </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <Button size="lg" className="w-full sm:w-auto gap-2" onClick={onDownloadClick}>
-                <Download size={20} />
-                Download for iOS
-              </Button>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto gap-2" onClick={onDownloadClick}>
-                <Download size={20} />
-                Download for Android
-              </Button>
+
+            {/* Android Early Access Section - Bigger Version with Rocket */}
+            <div className="max-w-xl mx-auto lg:mx-0 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 p-4 rounded-3xl flex items-center justify-between gap-6 shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden relative">
+               <div className="flex items-center gap-4 pl-1 relative z-0">
+                  <div className="relative z-20 bg-white p-2.5 rounded-2xl shadow-sm text-blue-600 group-hover:text-white group-hover:bg-blue-600 group-hover:shadow-blue-500/30 group-hover:translate-x-[165px] sm:group-hover:translate-x-[200px] lg:group-hover:translate-x-[260px] group-hover:rotate-45 transition-all duration-700 ease-in-out">
+                    <Rocket size={22} fill="currentColor" fillOpacity={0.1} strokeWidth={2} />
+                  </div>
+                  <div className="flex flex-col items-start text-left relative z-0">
+                     <h3 className="font-bold text-gray-900 text-xl leading-tight">Android Early Access</h3>
+                     <p className="text-base text-gray-500 font-medium mt-1">Join our beta program today</p>
+                  </div>
+               </div>
+               <a 
+                 href="https://forms.gle/jrfpCuwJZfs6Bw6p7" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="relative z-10 px-8 py-3.5 bg-blue-600 text-white text-base font-bold rounded-2xl shadow-lg shadow-blue-200 hover:bg-blue-700 hover:shadow-blue-300 hover:-translate-y-0.5 transition-all whitespace-nowrap flex items-center gap-2"
+               >
+                 Try now!
+                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
+               </a>
             </div>
           </div>
 
