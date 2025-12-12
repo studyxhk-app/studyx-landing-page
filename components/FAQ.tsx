@@ -11,8 +11,8 @@ const faqs = [
     answer: "We currently cover a wide range of HKDSE subjects including Mathematics, English, Chinese, Economics, Chemistry and Biology. We are constantly adding more questions and subjects. Stay tuned!"
   },
   {
-    question: "Is the app available on iOS and Android?",
-    answer: "Yes, StudyX is available for download on both the Apple App Store and Google Play Store. It is optimized for both phone and tablet devices."
+    question: "Which platforms does StudyX support?",
+    answer: "StudyX is currently available for Android via our Early Access program. You can join the beta to start studying today! The iOS version is currently in development and will be released soon."
   },
   {
     question: "How does the gamification system work?",

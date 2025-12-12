@@ -49,17 +49,6 @@ const App: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-               {/* Official App Store Badge Style - White Variant */}
-               <button onClick={() => setView('coming-soon')} className="flex items-center gap-3 bg-white text-gray-900 px-5 py-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl min-w-[180px]">
-                  <svg className="w-8 h-8 fill-black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.388 13.123c-1.396-.807-2.18-2.313-2.096-3.92.083-2.52 2.146-4.11 2.229-4.172-.02-.062-1.354-1.574-2.73-1.593-1.166-.021-2.062.687-2.708.687-.667 0-1.708-.666-2.812-.645-1.438.02-2.77 1.25-2.77 1.25s-2.355 2.875-2.355 6.042c0 4.604 3.667 8.041 3.667 8.041s1.083 2.938 2.666 2.896c1.104-.02 1.542-.708 2.896-.708 1.333 0 1.75.708 2.833.687 1.646-.02 2.625-2.916 2.625-2.916s-1.896-.791-2.833-2.333zM12.97 3.604c.729-.875 1.209-2.084 1.084-3.313-1.042.042-2.313.688-3.063 1.563-.666.75-1.25 1.958-1.083 3.125 1.166.083 2.333-.5 3.062-1.375z"/>
-                  </svg>
-                  <div className="text-left flex flex-col items-start">
-                    <span className="text-[10px] font-medium leading-none mb-1 text-gray-600">Download on the</span>
-                    <span className="text-xl font-bold leading-none font-sans tracking-tight">App Store</span>
-                  </div>
-               </button>
-
                {/* Official Google Play Badge Style - White Variant */}
                <button onClick={() => setView('coming-soon')} className="flex items-center gap-3 bg-white text-gray-900 px-5 py-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl min-w-[180px]">
                   <svg className="w-7 h-7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
