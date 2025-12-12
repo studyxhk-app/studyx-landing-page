@@ -3,7 +3,7 @@ import { PhoneFrame } from './ui/PhoneFrame';
 import { SubjectsScreen } from './screens/SubjectsScreen';
 import { ForumScreen } from './screens/ForumScreen';
 import { RankingScreen } from './screens/RankingScreen';
-import { BookOpen, Target, Users, Zap, MessageCircle, BarChart3, Trophy } from 'lucide-react';
+import { BookOpen, Target, Users, Zap, MessageCircle, BarChart3, Trophy, Flame } from 'lucide-react';
 
 const features = [
   {
@@ -136,8 +136,21 @@ export const Features: React.FC = () => {
                     <p className="text-lg text-gray-600 leading-relaxed">
                         Join the leaderboard and see where you stand among peers in Hong Kong. Challenge friends, earn badges, and stay motivated by seeing your name climb the ranks.
                     </p>
+
+                    {/* Friend Streak Highlight */}
+                    <div className="flex items-start gap-4 p-5 bg-orange-50 rounded-2xl border border-orange-100">
+                        <div className="p-2.5 bg-white rounded-xl text-orange-500 shrink-0 shadow-sm border border-orange-100">
+                            <Flame size={24} fill="currentColor" />
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-gray-900 text-lg mb-1">New: Friend Streaks 🔥</h4>
+                            <p className="text-gray-600 leading-relaxed">
+                                Team up with a friend to maintain a shared study streak. Keep each other accountable—if one misses a day, you both lose the streak!
+                            </p>
+                        </div>
+                    </div>
                     
-                    <div className="relative p-6 bg-white rounded-2xl border border-gray-100 shadow-lg mt-6">
+                    <div className="relative p-6 bg-white rounded-2xl border border-gray-100 shadow-lg mt-2">
                         <div className="absolute -top-4 left-8 text-6xl text-blue-100 font-serif leading-none">"</div>
                         <p className="relative z-10 text-gray-700 italic font-medium text-lg">
                             The competition makes me want to study just 10 more minutes every night! It's actually fun.

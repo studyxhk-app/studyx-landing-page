@@ -96,7 +96,7 @@ export const RankingScreen: React.FC = () => {
                 <div key={user.rank} className={`flex items-center px-4 py-3 border-b border-gray-50 ${user.isMe ? 'bg-[#EBF5FF]' : 'bg-white'}`}>
                 <span className="w-5 text-center font-medium text-xs text-gray-500">{user.rank}</span>
                 <div className={`w-9 h-9 rounded-full mx-3 overflow-hidden flex items-center justify-center shadow-sm border border-gray-100 ${user.isMe ? 'bg-white' : 'bg-gray-50'}`}>
-                    {user.isMe ? <span className="font-extrabold text-blue-600 text-[9px]">StudyX</span> : <img src={user.img} className="w-full h-full object-cover" alt={user.name} />}
+                    {user.isMe ? <span className="font-extrabold text-blue-600 text-[9px]">StudyX</span> : <img src={user.img} loading="lazy" className="w-full h-full object-cover" alt={user.name} />}
                 </div>
                 <div className="flex-1 min-w-0">
                     <h4 className={`text-xs font-bold truncate ${user.isMe ? 'text-[#007AFF]' : 'text-gray-900'}`}>

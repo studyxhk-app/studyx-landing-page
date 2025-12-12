@@ -34,7 +34,14 @@ export const Testimonials: React.FC = () => {
           {testimonials.map((t, idx) => (
             <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all">
               <div className="flex items-center gap-4 mb-6">
-                <img src={t.image} alt={t.name} className="w-14 h-14 rounded-full object-cover border-2 border-blue-100" />
+                <img 
+                  src={t.image} 
+                  alt={`${t.name} - ${t.role}`}
+                  loading="lazy"
+                  width="56"
+                  height="56"
+                  className="w-14 h-14 rounded-full object-cover border-2 border-blue-100" 
+                />
                 <div>
                   <h4 className="font-bold text-gray-900">{t.name}</h4>
                   <p className="text-sm text-blue-600">{t.role}</p>

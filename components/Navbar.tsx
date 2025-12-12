@@ -33,19 +33,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick, onResourcesClic
   }
 
   return (
-    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div 
+            className="flex-shrink-0 flex items-center cursor-pointer" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            role="button"
+            tabIndex={0}
+            onKeyPress={(e) => e.key === 'Enter' && window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Go to homepage"
+          >
             {/* 
               Logo Image
-              To use your own logo file:
-              1. Add your logo file (e.g., logo.png) to the public folder.
-              2. Change src to "/logo.png"
             */}
             <img 
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'%3E%3Ctext x='0' y='32' font-family='Inter, sans-serif' font-weight='800' font-size='32' fill='%23111827'%3EStudyX%3C/text%3E%3C/svg%3E" 
-              alt="StudyX" 
+              alt="StudyX Logo" 
               className="h-8 w-auto" 
             />
           </div>
@@ -60,7 +64,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick, onResourcesClic
           </div>
 
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 hover:text-blue-600">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-gray-600 hover:text-blue-600 p-2"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -69,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick, onResourcesClic
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-100 shadow-lg">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-100 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <div className="px-4 pt-2 pb-6 space-y-2">
             <a href="#hero" onClick={scrollToHeroMobile} className="block px-3 py-3 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Features</a>
             <button onClick={() => { setIsOpen(false); onResourcesClick(); }} className="block w-full text-left px-3 py-3 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Resources</button>
