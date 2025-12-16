@@ -1,12 +1,15 @@
 import React from 'react';
 import { Mail, ArrowLeft, MessageCircle, HelpCircle } from 'lucide-react';
 import { Button } from './ui/Button';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface ContactUsProps {
   onBack: () => void;
 }
 
 export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex flex-col items-center justify-center p-4 relative overflow-hidden font-sans">
       {/* Dynamic Background Decoration */}
@@ -20,15 +23,15 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
         <div className="text-center mb-16">
            <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-white/60 backdrop-blur-sm border border-blue-100 shadow-sm mb-8 hover:bg-white hover:scale-105 transition-all cursor-default">
               <div className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></div>
-              <span className="text-blue-700 text-xs font-bold uppercase tracking-widest">Support Center</span>
+              <span className="text-blue-700 text-xs font-bold uppercase tracking-widest">{t('contact.badge')}</span>
            </div>
            
            <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-gray-900 via-gray-800 to-gray-600 tracking-tight mb-6 drop-shadow-sm pb-2">
-             Contact Us
+             {t('contact.title')}
            </h1>
            
            <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-light">
-             We're here to help you ace your DSE. <br/> Reach out anytime.
+             {t('contact.subtitle')}
            </p>
         </div>
 
@@ -43,7 +46,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
                         <MessageCircle size={48} strokeWidth={1.5} className="drop-shadow-sm" />
                     </div>
                     <h3 className="font-bold text-gray-900 text-2xl mb-2">WhatsApp</h3>
-                    <p className="text-gray-500 mb-8 font-medium">Instant messaging support</p>
+                    <p className="text-gray-500 mb-8 font-medium">{t('contact.whatsapp.desc')}</p>
                     <div className="px-8 py-3 bg-white rounded-2xl shadow-sm border border-gray-100 group-hover:bg-[#25D366] group-hover:border-[#25D366] group-hover:text-white transition-all duration-300">
                       <span className="text-gray-900 font-bold text-lg tracking-wide group-hover:text-white">9858 5420</span>
                     </div>
@@ -60,7 +63,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
                         <Mail size={48} strokeWidth={1.5} className="drop-shadow-sm" />
                     </div>
                     <h3 className="font-bold text-gray-900 text-2xl mb-2">Email</h3>
-                    <p className="text-gray-500 mb-8 font-medium">General inquiries & support</p>
+                    <p className="text-gray-500 mb-8 font-medium">{t('contact.email.desc')}</p>
                     <div className="px-8 py-3 bg-white rounded-2xl shadow-sm border border-gray-100 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all duration-300">
                       <span className="text-gray-900 font-bold text-lg tracking-wide group-hover:text-white">info@studyxhk.com</span>
                     </div>
@@ -71,11 +74,11 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onBack }) => {
         <div className="text-center flex flex-col items-center gap-6">
              <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <HelpCircle size={16} />
-                <span>Typical response time: Within 24 hours</span>
+                <span>{t('contact.response')}</span>
              </div>
              
              <Button onClick={onBack} variant="secondary" className="pl-6 pr-8 py-4 text-gray-600 hover:text-gray-900 border-gray-200 hover:bg-white hover:shadow-xl hover:shadow-gray-200/50 transition-all gap-3 rounded-full text-base font-bold tracking-wide">
-                <ArrowLeft size={20} /> Back to Home
+                <ArrowLeft size={20} /> {t('contact.back')}
              </Button>
         </div>
       </div>

@@ -5,12 +5,15 @@ import { QuizScreen } from './screens/QuizScreen';
 import { SubjectsScreen } from './screens/SubjectsScreen';
 import { ProfileScreen } from './screens/ProfileScreen';
 import { Download, Star, Zap, Rocket } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface HeroProps {
   onDownloadClick: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onDownloadClick }) => {
+  const { t } = useLanguage();
+
   return (
     <section id="hero" className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,15 +26,15 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              #1 Education App for HKDSE
+              {t('hero.badge')}
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Seize every moment to <span className="text-blue-600">study & practice.</span>
+              {t('hero.title.start')} <span className="text-blue-600">{t('hero.title.end')}</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              The exam-oriented companion for Hong Kong students. Master your subjects with gamified quizzes, community support, and detailed analytics.
+              {t('hero.subtitle')}
             </p>
 
             {/* Mobile App Early Access Section - Android Only */}
@@ -41,8 +44,8 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick }) => {
                     <Rocket size={22} fill="currentColor" fillOpacity={0.1} strokeWidth={2} />
                   </div>
                   <div className="flex flex-col items-start text-left relative z-0">
-                     <h3 className="font-bold text-gray-900 text-xl leading-tight">Android Early Access</h3>
-                     <p className="text-base text-gray-500 font-medium mt-1">Join our beta program today</p>
+                     <h3 className="font-bold text-gray-900 text-xl leading-tight">{t('hero.earlyAccess.title')}</h3>
+                     <p className="text-base text-gray-500 font-medium mt-1">{t('hero.earlyAccess.subtitle')}</p>
                   </div>
                </div>
                <a 
@@ -51,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick }) => {
                  rel="noopener noreferrer"
                  className="relative z-10 px-8 py-3.5 bg-blue-600 text-white text-base font-bold rounded-2xl shadow-lg shadow-blue-200 hover:bg-blue-700 hover:shadow-blue-300 hover:-translate-y-0.5 transition-all whitespace-nowrap flex items-center gap-2"
                >
-                 Try now!
+                 {t('hero.tryNow')}
                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
                </a>
             </div>

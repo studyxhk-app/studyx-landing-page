@@ -1,12 +1,15 @@
 import React from 'react';
 import { Mail, ArrowLeft, MessageCircle, Rocket } from 'lucide-react';
 import { Button } from './ui/Button';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface ComingSoonProps {
   onBack: () => void;
 }
 
 export const ComingSoon: React.FC<ComingSoonProps> = ({ onBack }) => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4 relative overflow-hidden font-sans">
       {/* Background Decoration */}
@@ -24,23 +27,22 @@ export const ComingSoon: React.FC<ComingSoonProps> = ({ onBack }) => {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
-            Coming Soon!
+            {t('coming.title')}
           </h1>
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            We're putting the finishing touches on StudyX. <br className="hidden sm:block"/>
-            Get ready to revolutionize your HKDSE prep.
+            {t('coming.desc')}
           </p>
 
           {/* Contact Cards */}
           <div className="space-y-4 text-left mb-10">
-             <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-center">Contact us for early access</div>
+             <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 text-center">{t('coming.contact')}</div>
              
              <a href="mailto:info@studyxhk.com" className="flex items-center gap-5 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 hover:bg-blue-50/30 transition-all group">
                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
                   <Mail size={22} />
                </div>
                <div>
-                  <p className="text-xs text-gray-500 font-medium">Email Support</p>
+                  <p className="text-xs text-gray-500 font-medium">{t('coming.email')}</p>
                   <span className="font-bold text-gray-900 text-lg">info@studyxhk.com</span>
                </div>
              </a>
@@ -58,7 +60,7 @@ export const ComingSoon: React.FC<ComingSoonProps> = ({ onBack }) => {
 
           <Button onClick={onBack} variant="secondary" className="w-full py-4 text-gray-600 hover:text-gray-900 border-gray-200 gap-2">
             <ArrowLeft size={18} />
-            Return to Homepage
+            {t('coming.return')}
           </Button>
         </div>
 

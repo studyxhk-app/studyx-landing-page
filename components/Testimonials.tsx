@@ -1,33 +1,36 @@
 import React from 'react';
-
-const testimonials = [
-  {
-    name: "Albert Einstein",
-    role: "Physics Enthusiast",
-    content: "Physics 5** is easy with StudyX! The logic flow in the explanations helps me understand the 'why' behind every answer.",
-    image: "https://picsum.photos/seed/einstein/100"
-  },
-  {
-    name: "Confucius",
-    role: "Chinese Literature Master",
-    content: "Learning without thought is labor lost; thought without learning is perilous. StudyX combines both beautifully.",
-    image: "https://picsum.photos/seed/confucius/100"
-  },
-  {
-    name: "Adam Smith",
-    role: "Economics Student",
-    content: "The supply and demand of quality study materials is finally balanced. This app maximizes my utility function perfectly.",
-    image: "https://picsum.photos/seed/adam/100"
-  }
-];
+import { useLanguage } from '../hooks/useLanguage';
 
 export const Testimonials: React.FC = () => {
+  const { t } = useLanguage();
+
+  const testimonials = [
+    {
+      name: "Albert Einstein",
+      role: t('testimonial.1.role'),
+      content: t('testimonial.1.content'),
+      image: "https://picsum.photos/seed/einstein/100"
+    },
+    {
+      name: "Confucius",
+      role: t('testimonial.2.role'),
+      content: t('testimonial.2.content'),
+      image: "https://picsum.photos/seed/confucius/100"
+    },
+    {
+      name: "Adam Smith",
+      role: t('testimonial.3.role'),
+      content: t('testimonial.3.content'),
+      image: "https://picsum.photos/seed/adam/100"
+    }
+  ];
+
   return (
     <section id="testimonials" className="py-24 bg-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900">Loved by Students (and Legends)</h2>
-          <p className="mt-4 text-xl text-gray-600">Join a community of learners dedicated to excellence.</p>
+          <h2 className="text-3xl font-extrabold text-gray-900">{t('testimonials.title')}</h2>
+          <p className="mt-4 text-xl text-gray-600">{t('testimonials.subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

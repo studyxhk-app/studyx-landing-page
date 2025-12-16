@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Instagram } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface FooterProps {
   onDownloadClick: () => void;
@@ -7,6 +8,8 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onDownloadClick, onFeaturesClick }) => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-slate-100 text-slate-600 py-12 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,28 +27,28 @@ export const Footer: React.FC<FooterProps> = ({ onDownloadClick, onFeaturesClick
                />
             </div>
             <p className="text-slate-600 max-w-sm">
-              Empowering Hong Kong students to achieve their academic dreams through technology and community.
+              {t('footer.desc')}
             </p>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-4">Product</h4>
+            <h4 className="text-lg font-semibold text-slate-900 mb-4">{t('footer.product')}</h4>
             <ul className="space-y-2">
               <li>
                 <button onClick={onFeaturesClick} className="hover:text-blue-600 transition-colors text-left text-slate-600">
-                  Features
+                  {t('nav.features')}
                 </button>
               </li>
               <li>
                 <button onClick={onDownloadClick} className="hover:text-blue-600 transition-colors text-left text-slate-600">
-                  Download
+                  {t('nav.download')}
                 </button>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold text-slate-900 mb-4">Contact us</h4>
+            <h4 className="text-lg font-semibold text-slate-900 mb-4">{t('footer.contact')}</h4>
             <div className="flex gap-4">
               {/* WhatsApp */}
               <a href="https://wa.me/85298585420" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
@@ -68,7 +71,7 @@ export const Footer: React.FC<FooterProps> = ({ onDownloadClick, onFeaturesClick
         </div>
         
         <div className="border-t border-slate-200 mt-12 pt-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} StudyX. All rights reserved. Made with ❤️ in Hong Kong.
+          © {new Date().getFullYear()} {t('footer.rights')}
         </div>
       </div>
     </footer>

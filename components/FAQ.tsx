@@ -1,27 +1,29 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
-
-const faqs = [
-  {
-    question: "Is StudyX completely free?",
-    answer: "Yes! StudyX is free to download and use. We believe every student in Hong Kong deserves access to high-quality study resources regardless of their background."
-  },
-  {
-    question: "What subjects does StudyX cover?",
-    answer: "We currently cover a wide range of HKDSE subjects including Mathematics, English, Chinese, Economics, Chemistry and Biology. We are constantly adding more questions and subjects. Stay tuned!"
-  },
-  {
-    question: "Which platforms does StudyX support?",
-    answer: "StudyX is currently available for Android via our Early Access program. You can join the beta to start studying today! The iOS version is currently in development and will be released soon."
-  },
-  {
-    question: "How does the gamification system work?",
-    answer: "You earn XP (Experience Points) for every correct answer. As you gain XP, you level up, unlock badges, and climb the leaderboard. Maintaining a daily streak also grants bonus rewards! Plus, with Friend Streaks, you can partner with friends to study together—keep your shared streak alive to boost motivation."
-  }
-];
+import { useLanguage } from '../hooks/useLanguage';
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { t } = useLanguage();
+
+  const faqs = [
+    {
+      question: t('faq.q1'),
+      answer: t('faq.a1')
+    },
+    {
+      question: t('faq.q2'),
+      answer: t('faq.a2')
+    },
+    {
+      question: t('faq.q3'),
+      answer: t('faq.a3')
+    },
+    {
+      question: t('faq.q4'),
+      answer: t('faq.a4')
+    }
+  ];
 
   return (
     <section id="faq" className="py-24 bg-white border-t border-gray-100 relative overflow-hidden">
@@ -34,8 +36,8 @@ export const FAQ: React.FC = () => {
           <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl mb-4">
              <HelpCircle size={24} />
           </div>
-          <h2 className="text-3xl font-extrabold text-gray-900">Frequently Asked Questions</h2>
-          <p className="mt-4 text-xl text-gray-600">Got questions? We've got answers.</p>
+          <h2 className="text-3xl font-extrabold text-gray-900">{t('faq.title')}</h2>
+          <p className="mt-4 text-xl text-gray-600">{t('faq.subtitle')}</p>
         </div>
 
         <div className="space-y-4">
