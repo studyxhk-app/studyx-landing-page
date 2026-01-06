@@ -11,7 +11,7 @@ const translations = {
     'nav.download': 'Download App',
     
     // Hero
-    'hero.badge': '#1 Education App for HKDSE',
+    'hero.badge': 'iOS App is officially launched! Download now!',
     'hero.title.start': 'Seize every moment to',
     'hero.title.end': 'study & practice.',
     'hero.subtitle': 'The exam-oriented companion for Hong Kong students. Master your subjects with gamified quizzes, community support, and detailed analytics.',
@@ -91,10 +91,11 @@ const translations = {
     'footer.contact': 'Contact us',
     'footer.rights': 'StudyX. All rights reserved. Made with ❤️ in Hong Kong.',
 
-    // Coming Soon
-    'coming.title': 'Coming Soon!',
-    'coming.desc': "We're putting the finishing touches on StudyX. Get ready to revolutionize your HKDSE prep.",
-    'coming.contact': 'Contact us for early access',
+    // Coming Soon / Download Page
+    'coming.title': 'Official Launch!',
+    'coming.desc': "iOS version is Official launch! Download now!",
+    'coming.android_beta': '*Android version is currently in closed beta.',
+    'coming.contact': 'Contact us',
     'coming.email': 'Email Support',
     'coming.return': 'Return to Homepage',
 
@@ -115,7 +116,7 @@ const translations = {
     'nav.download': '下載 App',
     
     // Hero
-    'hero.badge': '全港 No.1 DSE 學習 App',
+    'hero.badge': 'iOS App 正式推出！立即下載！',
     'hero.title.start': '善用每分每秒',
     'hero.title.end': '學習與練習',
     'hero.subtitle': '專為香港學生打造的溫習神器。透過遊戲化體驗、論壇互助和詳細數據分析，助你輕鬆準備DSE。',
@@ -195,10 +196,11 @@ const translations = {
     'footer.contact': '聯絡我們',
     'footer.rights': 'StudyX. 版權所有. Made with ❤️ in Hong Kong.',
 
-    // Coming Soon
-    'coming.title': '即將推出！',
-    'coming.desc': "我們正在為 StudyX 進行最後的更新。準備好徹底改變你的 DSE 備戰方式。",
-    'coming.contact': '聯絡我們獲取優先體驗',
+    // Coming Soon / Download Page
+    'coming.title': '正式推出！',
+    'coming.desc': "iOS 版本正式推出！立即下載！",
+    'coming.android_beta': '*Android 版本目前處於封測階段。',
+    'coming.contact': '聯絡我們',
     'coming.email': '電郵',
     'coming.return': '返回首頁',
 

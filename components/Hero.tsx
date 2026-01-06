@@ -21,13 +21,19 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick }) => {
           
           {/* Text Content */}
           <div className="text-center lg:text-left space-y-8 relative z-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-semibold mb-2">
-              <span className="relative flex h-2 w-2">
+            <button 
+              onClick={onDownloadClick}
+              className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-base font-bold mb-4 hover:bg-blue-100 transition-all cursor-pointer group shadow-sm hover:shadow-md hover:scale-105 duration-300"
+            >
+              <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
               </span>
-              {t('hero.badge')}
-            </div>
+              <span>{t('hero.badge')}</span>
+              <svg className="w-5 h-5 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
               {t('hero.title.start')} <span className="text-blue-600">{t('hero.title.end')}</span>
@@ -37,26 +43,12 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick }) => {
               {t('hero.subtitle')}
             </p>
 
-            {/* Mobile App Early Access Section - Android Only */}
-            <div className="max-w-xl mx-auto lg:mx-0 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 p-4 rounded-3xl flex items-center justify-between gap-6 shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden relative">
-               <div className="flex items-center gap-4 pl-1 relative z-0">
-                  <div className="relative z-20 bg-white p-2.5 rounded-2xl shadow-sm text-blue-600 group-hover:text-white group-hover:bg-blue-600 group-hover:shadow-blue-500/30 group-hover:translate-x-[165px] sm:group-hover:translate-x-[200px] lg:group-hover:translate-x-[230px] group-hover:rotate-45 transition-all duration-700 ease-in-out">
-                    <Rocket size={22} fill="currentColor" fillOpacity={0.1} strokeWidth={2} />
-                  </div>
-                  <div className="flex flex-col items-start text-left relative z-0">
-                     <h3 className="font-bold text-gray-900 text-xl leading-tight">{t('hero.earlyAccess.title')}</h3>
-                     <p className="text-base text-gray-500 font-medium mt-1">{t('hero.earlyAccess.subtitle')}</p>
-                  </div>
-               </div>
-               <a 
-                 href="https://forms.gle/jrfpCuwJZfs6Bw6p7" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="relative z-10 px-8 py-3.5 bg-blue-600 text-white text-base font-bold rounded-2xl shadow-lg shadow-blue-200 hover:bg-blue-700 hover:shadow-blue-300 hover:-translate-y-0.5 transition-all whitespace-nowrap flex items-center gap-2"
-               >
-                 {t('hero.tryNow')}
-                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
-               </a>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-4">
+               <Button size="lg" onClick={onDownloadClick} className="shadow-xl shadow-blue-500/20 gap-2 px-8">
+                 <Download size={20} />
+                 {t('nav.download')}
+               </Button>
             </div>
           </div>
 
